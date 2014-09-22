@@ -1,3 +1,5 @@
+package ken.notken.lol;
+
 public class Hand
 {
 	public Card card1;
