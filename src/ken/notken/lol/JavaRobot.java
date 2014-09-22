@@ -23,6 +23,11 @@ public class JavaRobot
 		Card aceDiamonds = new Card(Suit.DIAMONDS, Rank.Ace, getAbsoluteFilePath("AceDiamonds.png"), "Ad");
 		Card aceSpades = new Card(Suit.SPADES, Rank.Ace, getAbsoluteFilePath("AceSpades.png"), "As");
 		
+		Card Kd = new Card(Suit.DIAMONDS, Rank.King, getAbsoluteFilePath("KingDiamonds.png"), "Kd");
+		Card Ks = new Card(Suit.SPADES, Rank.King, getAbsoluteFilePath("KingSpades.png"), "Ks");
+		Card Kc = new Card(Suit.CLUBS, Rank.King, getAbsoluteFilePath("KingClubs.png"), "Kc");
+		Card Kh = new Card(Suit.HEARTS, Rank.King, getAbsoluteFilePath("KingHearts.png"), "Kh");
+		
 		//Random images for negative testing(they are not blank)
 		Card blank1 = new Card("Blank 1", getAbsoluteFilePath("Blank1.png"));
 		Card blank2 = new Card("Blank 2", getAbsoluteFilePath("Blank2.png"));
@@ -31,6 +36,11 @@ public class JavaRobot
 		deck.add(aceSpades);
 		deck.add(blank1);
 		deck.add(blank2);
+		
+		deck.add(Kd);
+		deck.add(Ks);
+		deck.add(Kc);
+		deck.add(Kh);
 	}
 	
 	public static boolean isCardInImage(Card card, Mat image)
@@ -57,19 +67,34 @@ public class JavaRobot
 
 			initCards();
 
-			Mat img = Highgui.imread(getAbsoluteFilePath("AcesHand.png"));
+			Mat AdAs = Highgui.imread(getAbsoluteFilePath("AcesHand.png"));
 			
 			for (Card card : deck)
 			{
-				if (isCardInImage(card, img))
+				if (isCardInImage(card, AdAs))
 				{
-					System.out.println(card.name + " is in image");
+					System.out.println(card.name + " is in AdAs");
 				} else
 				{
-					System.out.println(card.name + " is NOT in image");
+					System.out.println(card.name + " is NOT in AdAs");
 
 				}
 			}
+			
+			Mat KhKs = Highgui.imread(getAbsoluteFilePath("KhKs.png"));
+			
+			for (Card card : deck)
+			{
+				if (isCardInImage(card, KhKs))
+				{
+					System.out.println(card.name + " is in KhKs");
+				} else
+				{
+					System.out.println(card.name + " is NOT in KhKs");
+
+				}
+			}
+			
 			
 			//			
 //			Robot robot = new Robot(getGraphicsDevice());
