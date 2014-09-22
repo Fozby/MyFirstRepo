@@ -2,6 +2,8 @@ package ken.notken.lol;
 
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
 import java.io.File;
 import java.util.Vector;
 
@@ -96,6 +98,21 @@ public class JavaRobot
 		GraphicsDevice[] gs = ge.getScreenDevices();
 
 		return gs[0];
+	}
+	
+	// Convert image to Mat
+	public Mat matify(BufferedImage im)
+	{
+		// Convert bufferedimage to byte array
+		byte[] pixels = ((DataBufferByte) im.getRaster().getDataBuffer())
+				.getData();
+
+		// Create a Matrix the same size of image
+		Mat image = new Mat(im.getHeight(), im.getWidth(), CvType.CV_8UC3);
+		// Fill Matrix with image values
+		image.put(0, 0, pixels);
+
+		return image;
 	}
 	
 	private static String getAbsoluteFilePath(String fileName)
