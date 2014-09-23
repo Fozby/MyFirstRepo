@@ -25,6 +25,8 @@ public class JavaRobot
 		
 		Card Kd = new Card(Suit.DIAMONDS, Rank.King, getAbsoluteFilePath("KingDiamonds.png"), "Kd");
 		Card Ks = new Card(Suit.SPADES, Rank.King, getAbsoluteFilePath("KingSpades.png"), "Ks");
+		Card Kss = new Card(Suit.SPADES, Rank.King, getAbsoluteFilePath("KingSpadesSmall.png"), "Ks small");
+
 		Card Kc = new Card(Suit.CLUBS, Rank.King, getAbsoluteFilePath("KingClubs.png"), "Kc");
 		Card Kh = new Card(Suit.HEARTS, Rank.King, getAbsoluteFilePath("KingHearts.png"), "Kh");
 		
@@ -39,6 +41,7 @@ public class JavaRobot
 		
 		deck.add(Kd);
 		deck.add(Ks);
+		deck.add(Kss);
 		deck.add(Kc);
 		deck.add(Kh);
 	}
@@ -73,7 +76,7 @@ public class JavaRobot
 			{
 				if (isCardInImage(card, AdAs))
 				{
-					System.out.println(card.name + " is in AdAs");
+					System.out.println("*" + card.name + " is in AdAs");
 				} else
 				{
 					System.out.println(card.name + " is NOT in AdAs");
@@ -81,13 +84,15 @@ public class JavaRobot
 				}
 			}
 			
+			System.out.println("");
+			
 			Mat KhKs = Highgui.imread(getAbsoluteFilePath("KhKs.png"));
 			
 			for (Card card : deck)
 			{
 				if (isCardInImage(card, KhKs))
 				{
-					System.out.println(card.name + " is in KhKs");
+					System.out.println("*" + card.name + " is in KhKs");
 				} else
 				{
 					System.out.println(card.name + " is NOT in KhKs");
