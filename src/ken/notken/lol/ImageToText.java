@@ -22,7 +22,7 @@ public class ImageToText
 	{
 		try
 		{
-			File imageFile = new File(getAbsoluteFilePath("NovaPot2300_4table.png"));
+			File imageFile = new File(getAbsoluteFilePath("NovaBet100FullSize.png"));
 			Tesseract tess = Tesseract.getInstance();
 			
 			String imgText = tess.doOCR(imageFile);

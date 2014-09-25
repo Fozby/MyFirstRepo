@@ -10,6 +10,5 @@
 	<classpathentry kind="lib" path="libslol/jai_imageio.jar"/>
 	<classpathentry kind="lib" path="libslol/jna-4.1.0.jar"/>
 	<classpathentry kind="lib" path="libslol/tess4j.jar"/>
-	<classpathentry kind="lib" path="libslol/aocr.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
